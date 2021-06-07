@@ -1,3 +1,4 @@
+/* Example media query selectors */
 .clear:before, .clear:after {
   content: ' ';
   display: table; }
@@ -414,6 +415,9 @@ body#home {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
+  @media only screen and (min-width: 1024px) {
+    body#home {
+      background-size: 120% auto; } }
   body#home .logo {
     display: none; }
   body#home a#contact-button {
@@ -432,7 +436,8 @@ body#home {
   right: 5%; }
 
 #contact-form {
-  margin: 100px 0; }
+  margin: 100px 0;
+  max-width: 500px; }
   #contact-form label {
     text-transform: uppercase;
     font-weight: 900; }
@@ -453,7 +458,6 @@ body#home {
     font-weight: 900;
     letter-spacing: 1px; }
 
-/* Example media query selectors */
 @media print {
   * {
     background: transparent !important;
