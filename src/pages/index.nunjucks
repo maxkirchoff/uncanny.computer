@@ -5,8 +5,8 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
-<section id="mission-header" class="main-heading">
-  <h1>Hello! s</h1>
+<section id="everything" class="main-heading">
+  <a id="contact-button" href="/contact">Contact</a>
 </section>
 
 

@@ -1,7 +1,58 @@
+body#home {
+  background: url("/assets/img/uncannycomputer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .logo {
+    display: none;
+  }
+
+  a#contact-button {
+    text-indent: -9999px;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
 .site-container {
   max-width: 1400px;
   position: absolute;
   top: 20px;
   left: 5%;
   right: 5%;
+}
+
+#contact-form {
+  margin: 100px 0;
+
+  label {
+    text-transform: uppercase;
+    font-weight: 900;
+
+  }
+
+  input, textarea {
+    width: 100%;
+    display: block;
+    font-weight: normal;
+
+  }
+  textarea {
+    height: 200px;
+  }
+  button {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
 }

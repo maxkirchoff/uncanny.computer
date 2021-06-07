@@ -1,4 +1,4 @@
-{% set pageID = pageID | default('') %}
+
 
 <!doctype html>
 <html class="no-js">
@@ -31,17 +31,47 @@
 
     <script src="assets/components/modernizr/modernizr.js"></script>
   </head>
-  <body id="{{ pageID }}">
+  <body id="contact">
   
     <div class="site-container">
 
 
-      {% include "partials/header.nunjucks" %}
+      
+
+
+
+
+<header class="header" role="banner">
+	<div class="logo">
+		<a href="/">
+			<img src="/assets/img/logo.png" alt="Logo">
+		</a>
+	</div>
+</header>
+
 
 
       <main class="main" role="main">
-        {% block content %}
-        {% endblock %}
+        
+<section id="contact-form" class="main-heading">
+  <form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name <input type="text" name="name" /></label>   
+  </p>
+  <p>
+    <label>Your Email <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>How can we help? <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+</section>
+
+
+
       </main>
 
       <aside class="sidebar" role="complementary">

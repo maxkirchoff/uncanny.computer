@@ -4,7 +4,7 @@
  * 
  * @author 
  * @version 1.0.0
- * Copyright 2020. ISC licensed.
+ * Copyright 2021. ISC licensed.
  */
 (function ($, window, document, undefined) {
 
