@@ -1,0 +1,49 @@
+<!-- index.nunjucks -->
+
+{% set pageID = 'about' %}
+
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+<section id="about" class="main-heading">
+  <h1>About</h1>
+    <div class="row">
+      <div class="profile-image">
+        <img src="/assets/img/max.jpg">
+      </div>
+      <div class="bio">
+        <p>Uncanny Computer is the technology consulting business owned by me, Maximillian Kirchoff. I provide services for small organizations with big impact.</p>
+        <p>Curious about my expertise? <br><a href="https://www.linkedin.com/" target="_blank">Here's my LinkedIn.</a><p>
+        <p>Some folks I've worked with:</p>
+        <ul>
+          <li><a href="https://www.valvesoftware.com/" target="_blank">Valve Software</a></li>
+          <li><a href="https://www.priyaparker.com/" target="_blank">Priya Parker</a></li>
+          <li><a href="https://uncute.com/" target="_blank">Uncute.com</a></li>
+          <li><a href="https://gorevel.com/" target="_blank">Revel</a></li>
+          <li><a href="https://www.fellowbarber.com/" target="_blank">Fellow Barber</a></li> 
+          <li><a href="http://leanstartup.co/" target="_blank">Lean Startup</a></li>
+        </ul>
+        <p>I'm always interested in hearing about new, exciting collaborations.</p>
+      </div>
+    </div>
+</section>
+<section id="contact-form">
+  <h1>Contact</h1>
+  <form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name <input type="text" name="name" /></label>   
+  </p>
+  <p>
+    <label>Your Email <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>How can we help? <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+</section>
+
+
+{% endblock %}

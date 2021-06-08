@@ -1,10 +1,13 @@
 body#home {
-  background: url("/assets/img/uncannycomputer.png");
+  background-image: url("/assets/img/uncannycomputer-mobile.png");
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-size: 100% auto;
+  
   @media only screen and (min-width: $md-min-width) {
-    background-size: 120% auto;
+    background-image: url("/assets/img/uncannycomputer.png");
+    background-position: center center;
+    background-size: 100% auto;
   }
 
   .logo {
@@ -22,7 +25,7 @@ body#home {
 }
 
 .site-container {
-  max-width: 1400px;
+  max-width: 1200px;
   position: absolute;
   top: 20px;
   left: 5%;
@@ -30,8 +33,11 @@ body#home {
 }
 
 #contact-form {
-  margin: 100px 0;
-  max-width: 500px;
+  margin-top: 50px;
+
+  @media only screen and (min-width: $md-min-width) {
+    margin-top: 0;
+  }
   
 
   label {
@@ -59,5 +65,47 @@ body#home {
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 1px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+body#about {
+  @media only screen and (min-width: $md-min-width) {
+
+    .row {
+      display: flex;
+      flex-direction: row;
+
+      > * {
+        width: 50%;
+        &.profile-image {
+          width: 40%;
+        }
+        &.bio {
+          margin-left: 5%;
+
+          > p:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      
+    }
+
+    .main {
+      display: flex;
+      flex-direction: row;
+
+      > section {
+        width: 33%;
+        &:first-child {
+          width: 66%;
+        }
+      }
+    }
   }
 }

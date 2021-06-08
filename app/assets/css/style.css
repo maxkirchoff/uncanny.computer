@@ -1,4 +1,5 @@
 /* Example media query selectors */
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
 .clear:before, .clear:after {
   content: ' ';
   display: table; }
@@ -13,14 +14,17 @@
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
-body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
-  color: #444;
-  transition: all .4s .3s ease-in; }
+html {
+  min-height: 100vh; }
 
-body, html {
-  min-height: 100vh;
-  overflow: hidden; }
+body {
+  font: 300 15px/1.6 'Cutive Mono', monospace;
+  color: #333;
+  transition: all .4s .3s ease-in; }
+  body a {
+    color: #000; }
+    body a:hover {
+      text-decoration: none; }
 
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -388,13 +392,6 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-@font-face {
-  font-family: 'Font-Name';
-  src: url("../fonts/font-name.eot");
-  src: url("../fonts/font-name.eot?#iefix") format("embedded-opentype"), url("../fonts/font-name.woff") format("woff"), url("../fonts/font-name.ttf") format("truetype"), url("../fonts/font-name.svg#font-name") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 ::selection {
   background: #333;
   color: #fff;
@@ -411,13 +408,15 @@ textarea {
   text-shadow: none; }
 
 body#home {
-  background: url("/assets/img/uncannycomputer.png");
+  background-image: url("/assets/img/uncannycomputer-mobile.png");
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center; }
+  background-size: 100% auto; }
   @media only screen and (min-width: 1024px) {
     body#home {
-      background-size: 120% auto; } }
+      background-image: url("/assets/img/uncannycomputer.png");
+      background-position: center center;
+      background-size: 100% auto; } }
   body#home .logo {
     display: none; }
   body#home a#contact-button {
@@ -429,15 +428,17 @@ body#home {
     right: 0; }
 
 .site-container {
-  max-width: 1400px;
+  max-width: 1200px;
   position: absolute;
   top: 20px;
   left: 5%;
   right: 5%; }
 
 #contact-form {
-  margin: 100px 0;
-  max-width: 500px; }
+  margin-top: 50px; }
+  @media only screen and (min-width: 1024px) {
+    #contact-form {
+      margin-top: 0; } }
   #contact-form label {
     text-transform: uppercase;
     font-weight: 900; }
@@ -457,6 +458,33 @@ body#home {
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 1px; }
+
+img {
+  max-width: 100%; }
+
+@media only screen and (min-width: 1024px) {
+  body#about .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row; }
+    body#about .row > * {
+      width: 50%; }
+      body#about .row > *.profile-image {
+        width: 40%; }
+      body#about .row > *.bio {
+        margin-left: 5%; }
+        body#about .row > *.bio > p:first-child {
+          margin-top: 0; }
+  body#about .main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row; }
+    body#about .main > section {
+      width: 33%; }
+      body#about .main > section:first-child {
+        width: 66%; } }
 
 @media print {
   * {
@@ -497,109 +525,103 @@ body#home {
   h3 {
     page-break-after: avoid; } }
 
-.header {
-  top: 10px;
-  z-index: 99;
-  position: absolute;
-  left: 0;
-  right: 0; }
-  .header .logo {
+.header .logo {
+  display: block;
+  width: 60px; }
+  .header .logo img {
+    width: 100%;
+    height: auto; }
+
+.header nav {
+  display: block;
+  width: 70%;
+  float: right;
+  margin-top: 20px; }
+  @media only screen and (min-width: 1024px) {
+    .header nav {
+      margin-top: 10px; } }
+  .header nav button.menu-toggle {
+    color: #000;
     display: block;
-    float: left;
-    width: 60px; }
-    .header .logo img {
-      width: 100%;
-      height: auto; }
-  .header nav {
-    display: block;
-    width: 70%;
-    float: right;
-    margin-top: 20px; }
+    position: absolute;
+    padding: 0 0 10px 20px;
+    text-transform: uppercase;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    border: 0; }
     @media only screen and (min-width: 1024px) {
-      .header nav {
-        margin-top: 10px; } }
-    .header nav button.menu-toggle {
-      color: #000;
+      .header nav button.menu-toggle {
+        display: none; } }
+    .header nav button.menu-toggle.menu-active {
+      color: #fff; }
+  .header nav ul {
+    display: none;
+    list-style: none;
+    line-height: 1;
+    margin: 0;
+    padding: 50px 8.33% 0;
+    position: fixed;
+    background: #ea6d23;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    @media only screen and (min-width: 1024px) {
+      .header nav ul {
+        padding: 0;
+        display: block;
+        margin-left: 3vw;
+        float: left;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        background: transparent;
+        width: 100%; } }
+    @media only screen and (min-width: 1280px) {
+      .header nav ul {
+        margin-left: 35px; } }
+    .header nav ul.active {
       display: block;
-      position: absolute;
-      padding: 0 0 10px 20px;
-      text-transform: uppercase;
-      right: 0;
-      top: 0;
-      z-index: 999;
-      outline: none;
-      background: none;
-      cursor: pointer;
-      border: 0; }
+      overflow: auto; }
+    .header nav ul li {
+      display: block;
+      margin: 6vh 0; }
       @media only screen and (min-width: 1024px) {
-        .header nav button.menu-toggle {
-          display: none; } }
-      .header nav button.menu-toggle.menu-active {
-        color: #fff; }
-    .header nav ul {
-      display: none;
-      list-style: none;
-      line-height: 1;
-      margin: 0;
-      padding: 50px 8.33% 0;
-      position: fixed;
-      background: #ea6d23;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0; }
-      @media only screen and (min-width: 1024px) {
-        .header nav ul {
-          padding: 0;
+        .header nav ul li {
+          vertical-align: top;
+          margin: 5px 1.3vw;
           display: block;
-          margin-left: 3vw;
-          float: left;
-          position: relative;
-          top: auto;
-          left: auto;
-          right: auto;
-          bottom: auto;
-          background: transparent;
-          width: 100%; } }
+          float: right; } }
       @media only screen and (min-width: 1280px) {
-        .header nav ul {
-          margin-left: 35px; } }
-      .header nav ul.active {
-        display: block;
-        overflow: auto; }
-      .header nav ul li {
-        display: block;
-        margin: 6vh 0; }
+        .header nav ul li {
+          margin: 10px 28px; } }
+      .header nav ul li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 7vw;
+        color: #fff; }
         @media only screen and (min-width: 1024px) {
-          .header nav ul li {
-            vertical-align: top;
-            margin: 5px 1.3vw;
-            display: block;
-            float: right; } }
+          .header nav ul li a {
+            font-size: 1vw;
+            color: #000; } }
         @media only screen and (min-width: 1280px) {
-          .header nav ul li {
-            margin: 10px 28px; } }
-        .header nav ul li a {
-          text-decoration: none;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 7vw;
+          .header nav ul li a {
+            font-size: 14px; } }
+        .header nav ul li a.button {
+          padding: 10px;
+          background: #ea6d23;
           color: #fff; }
-          @media only screen and (min-width: 1024px) {
-            .header nav ul li a {
-              font-size: 1vw;
-              color: #000; } }
-          @media only screen and (min-width: 1280px) {
-            .header nav ul li a {
-              font-size: 14px; } }
-          .header nav ul li a.button {
-            padding: 10px;
-            background: #ea6d23;
-            color: #fff; }
-            @media only screen and (max-width: 1023px) {
-              .header nav ul li a.button {
-                padding: 0;
-                background: transparent; } }
-          @media only screen and (min-width: 1024px) {
-            .header nav ul li a.active {
-              border-bottom: 2px solid #ea6d23; } }
+          @media only screen and (max-width: 1023px) {
+            .header nav ul li a.button {
+              padding: 0;
+              background: transparent; } }
+        @media only screen and (min-width: 1024px) {
+          .header nav ul li a.active {
+            border-bottom: 2px solid #ea6d23; } }

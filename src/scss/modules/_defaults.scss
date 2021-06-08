@@ -4,16 +4,20 @@
   text-rendering: optimizeLegibility;
 }
 html {
+  min-height: 100vh;
 }
 
 body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
-  color: #444;
+  font: 300 15px/1.6 'Cutive Mono', monospace;
+  color: #333;
   transition: all .4s .3s ease-in;
-}
-body,html{
-	min-height: 100vh;
-	overflow: hidden;
-}
 
+  a {
+    color: #000;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
 
